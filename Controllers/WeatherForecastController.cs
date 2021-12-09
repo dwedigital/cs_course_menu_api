@@ -4,6 +4,8 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
+using MealPlanner.Models;
+using System.Data;
 
 namespace MealPlanner.Controllers
 {
@@ -18,14 +20,16 @@ namespace MealPlanner.Controllers
 
         private readonly ILogger<WeatherForecastController> _logger;
 
-        public WeatherForecastController(ILogger<WeatherForecastController> logger)
+        public WeatherForecastController(ILogger<WeatherForecastController> logger, DbConnection db)
         {
+            DbConnection.Current = db;
             _logger = logger;
         }
 
         [HttpGet]
         public IEnumerable<WeatherForecast> Get()
         {
+
             var rng = new Random();
             return Enumerable.Range(1, 5).Select(index => new WeatherForecast
             {
