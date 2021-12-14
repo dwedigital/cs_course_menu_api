@@ -36,11 +36,8 @@ using System.Threading.Tasks;
         {
             MySqlCommand cmd = this.Connection.CreateCommand();
             cmd.CommandText = $"INSERT INTO ingredients (IngredientName) VALUES (@Name);";
-
             cmd.Parameters.AddWithValue("@Name", ingredient.Name);
-
             cmd.ExecuteNonQuery();
-
         }
 
         public void CreateRecipe(RecipeModel recipe)
