@@ -2,33 +2,33 @@ USE MealPlannerDb;
 
 CREATE TABLE ingredients
 (
-    IngredientsId      INT AUTO_INCREMENT NOT NULL,
-    Ingredient         VARCHAR(100),
+    IngredientId     INT AUTO_INCREMENT NOT NULL,
+    IngredientName   VARCHAR(100),
 
-    PRIMARY KEY (IngredientsId)
+    PRIMARY KEY (IngredientId)
 );
 
 INSERT INTO ingredients
-    (Ingredient)
+    (IngredientName)
     VALUES
     ("Salt");
 
 INSERT INTO ingredients
-    (Ingredient)
+    (IngredientName)
     VALUES
     ("Pepper");
 
 INSERT INTO ingredients
-    (Ingredient)
+    (IngredientName)
     VALUES
     ("Potato");
 
 INSERT INTO ingredients
-    (Ingredient)
+    (IngredientName)
     VALUES
     ("Chicken");
 
 INSERT INTO ingredients
-    (Ingredient)
+    (IngredientName)
     VALUES
     ("Tumeric");

@@ -2,12 +2,12 @@ USE MealPlannerDb;
 
 CREATE TABLE user
 (
-    CustomerId      INT AUTO_INCREMENT NOT NULL,
+    UserId          INT AUTO_INCREMENT NOT NULL,
     CustomerName    VARCHAR(25) NOT NULL,
     Email           VARCHAR(50) NOT NULL,
     Phone           INT NOT NULL,
 
-    PRIMARY KEY (CustomerId)
+    PRIMARY KEY (UserId)
 );
 
 INSERT INTO user
