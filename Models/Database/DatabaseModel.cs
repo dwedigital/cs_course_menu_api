@@ -20,17 +20,6 @@ using System.Threading.Tasks;
         public void Dispose() => Connection.Dispose();
 
         // add query methods below
-        public DataTable GetAllProducts()
-        {
-            string query = "SELECT * FROM product;";
-
-            DataTable t = new DataTable();
-
-            MySqlDataAdapter x = new MySqlDataAdapter(query, this.Connection);
-            x.Fill(t);
-
-            return t;
-        }
 
         public void CreateIngredient(IngredientModel ingredient)
         {
