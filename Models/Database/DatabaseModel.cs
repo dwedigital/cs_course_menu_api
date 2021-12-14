@@ -32,6 +32,26 @@ using System.Threading.Tasks;
             return t;
         }
 
+        public void CreateIngredient(IngredientModel ingredient)
+        {
+            MySqlCommand cmd = this.Connection.CreateCommand();
+            cmd.CommandText = $"INSERT INTO ingredients (IngredientName) VALUES (@Name);";
+
+            cmd.Parameters.AddWithValue("@Name", ingredient.Name);
+
+            cmd.ExecuteNonQuery();
+
+        }
+
+        public void CreateRecipe(RecipeModel recipe)
+        {
+            MySqlCommand cmd = this.Connection.CreateCommand();
+            cmd.CommandText = $"INSERT INTO recipe (RecipeName, RecipeDescription) VALUES (@Name, @Description);";
+            cmd.Parameters.AddWithValue("@Name", recipe.Name);
+            cmd.Parameters.AddWithValue("@Description", recipe.Description);
+            cmd.ExecuteNonQuery();
+        }
+
     }
 
 }
