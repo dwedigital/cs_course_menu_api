@@ -1,9 +1,10 @@
-namespace MealPlanner.Models{
+namespace MealPlanner.Models
+{
 
-using MySqlConnector;
-using System;
-using System.Data;
-using System.Threading.Tasks;
+    using System;
+    using System.Data;
+    using System.Threading.Tasks;
+    using MySqlConnector;
 
     public class DbConnection : IDisposable
     {
@@ -22,7 +23,8 @@ using System.Threading.Tasks;
         // add query methods below      
 
 
-        public DataTable GetIngredient(int id){
+        public DataTable GetIngredient(int id)
+        {
             string query = $"SELECT * FROM ingredients WHERE id = {id}";
             MySqlCommand cmd = new MySqlCommand(query, Connection);
             MySqlDataAdapter adapter = new MySqlDataAdapter(cmd);
@@ -98,22 +100,18 @@ using System.Threading.Tasks;
             return t;
         }
 
-        public DataTable GetMealsByDateRange(DateTime start, DateTime end = null, int UserId)
+        public DataTable GetUserMealsByDateRange(DateTime start,DateTime end, int UserId )
         {
 
-            if (start && (end != null)){
                 string query = $"SELECT * FROM mealchoice WHERE Date BETWEEN '{start.ToString("yyyy-MM-dd")}' AND '{end.ToString("yyyy-MM-dd")}' AND UserId = {UserId};";
-            }else{
-                string query = $"SELECT * FROM mealchoice WHERE Date = '{start.ToString("yyyy-MM-dd")}' AND UserId = {UserId};";
-            }
+                DataTable t = new DataTable();
+
+                MySqlDataAdapter x = new MySqlDataAdapter(query, this.Connection);
+                x.Fill(t);
+
+                return t;
             
 
-            DataTable t = new DataTable();
-
-            MySqlDataAdapter x = new MySqlDataAdapter(query, this.Connection);
-            x.Fill(t);
-
-            return t;
         }
 
 
