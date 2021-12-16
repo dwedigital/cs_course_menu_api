@@ -114,6 +114,26 @@ namespace MealPlanner.Models
 
         }
 
+        public DataTable GetRecipeIngredients(int id)
+        {
+            string query = $"SELECT IngredientId FROM recipe_ingredients WHERE RecipeID = {id}";
+            MySqlCommand cmd = new MySqlCommand(query, Connection);
+            MySqlDataAdapter adapter = new MySqlDataAdapter(cmd);
+            DataTable t = new DataTable();
+            adapter.Fill(t);
+
+            DataTable ingredients = new DataTable();
+
+            foreach (DataRow row in t.Rows)
+            {
+                int ingredientId = (int)row["IngredientId"];
+                DataRow ingredient = GetIngredient(ingredientId).Rows[0];
+                ingredients.Rows.Add(ingredient.ItemArray);
+            }
+
+            return ingredients;
+        }
+
 
     }
 
