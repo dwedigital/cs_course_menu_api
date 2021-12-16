@@ -71,6 +71,51 @@ using System.Threading.Tasks;
             return t;
         }
 
+        public DataTable GetMeal(int id)
+        {
+            MySqlCommand cmd = this.Connection.CreateCommand();
+
+            cmd.CommandText = "SELECT * FROM mealchoice WHERE MealchoiceId = @id;";
+            cmd.Parameters.AddWithValue("@id", id);
+
+            DataTable t = new DataTable();
+
+            MySqlDataAdapter x = new MySqlDataAdapter(cmd);
+            x.Fill(t);
+
+            return t;
+        }
+
+        public DataTable GetAllMeals()
+        {
+            string query = "SELECT * FROM mealchoice;";
+
+            DataTable t = new DataTable();
+
+            MySqlDataAdapter x = new MySqlDataAdapter(query, this.Connection);
+            x.Fill(t);
+
+            return t;
+        }
+
+        public DataTable GetMealsByDateRange(DateTime start, DateTime end = null, int UserId)
+        {
+
+            if (start && (end != null)){
+                string query = $"SELECT * FROM mealchoice WHERE Date BETWEEN '{start.ToString("yyyy-MM-dd")}' AND '{end.ToString("yyyy-MM-dd")}' AND UserId = {UserId};";
+            }else{
+                string query = $"SELECT * FROM mealchoice WHERE Date = '{start.ToString("yyyy-MM-dd")}' AND UserId = {UserId};";
+            }
+            
+
+            DataTable t = new DataTable();
+
+            MySqlDataAdapter x = new MySqlDataAdapter(query, this.Connection);
+            x.Fill(t);
+
+            return t;
+        }
+
 
     }
 
