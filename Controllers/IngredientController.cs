@@ -19,13 +19,13 @@ namespace MealPlanner.Controllers
         {
             List<IngredientsModel> products = IngredientsModel.GetAll();
 
-            return products;
+            return Json(products);
         }
         [HttpGet]
         public IActionResult Show(int id)
         {
             IngredientsModel product = IngredientsModel.GetById(id);
-            return product;
+            return Json(product);
         }
         [HttpGet]
         // public IActionResult Delete(int id)

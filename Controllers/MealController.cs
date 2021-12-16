@@ -24,7 +24,7 @@ namespace MealPlanner.Controllers
         public IActionResult Show(int id)
         {
             RecipeModel recipe = RecipeModel.GetById(id);
-            return recipe;
+            return Json(recipe);
         }
 
         // [HttpPost]
