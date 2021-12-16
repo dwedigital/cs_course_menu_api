@@ -116,7 +116,7 @@ namespace MealPlanner.Models
 
         public DataTable GetRecipeIngredients(int recipeId)
         {
-            string query = $"SELECT i.* FROM ingredients i.INNER JOIN recipe_ingredients ri ON ri.IngredientId = i.IngredientId WHERE ri.RecipeId = recipeId;";
+            string query = $"SELECT i.* FROM ingredients i.INNER JOIN recipe_ingredients ri ON ri.IngredientId = i.IngredientId WHERE ri.RecipeId = {recipeId};";
             MySqlCommand cmd = new MySqlCommand(query, Connection);
             MySqlDataAdapter adapter = new MySqlDataAdapter(cmd);
             DataTable ingredients = new DataTable();
