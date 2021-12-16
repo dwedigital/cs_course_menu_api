@@ -19,24 +19,58 @@ using System.Threading.Tasks;
 
         public void Dispose() => Connection.Dispose();
 
-        // add query methods below
+        // add query methods below      
 
-        public void CreateIngredient(IngredientModel ingredient)
+
+        public DataTable GetIngredient(int id){
+            string query = $"SELECT * FROM ingredients WHERE id = {id}";
+            MySqlCommand cmd = new MySqlCommand(query, Connection);
+            MySqlDataAdapter adapter = new MySqlDataAdapter(cmd);
+            DataTable t = new DataTable();
+            adapter.Fill(t);
+            return t;
+        }
+        public DataTable GetAllIngredients()
         {
-            MySqlCommand cmd = this.Connection.CreateCommand();
-            cmd.CommandText = $"INSERT INTO ingredients (IngredientName) VALUES (@Name);";
-            cmd.Parameters.AddWithValue("@Name", ingredient.Name);
-            cmd.ExecuteNonQuery();
+            string query = "SELECT * FROM ingredients;";
+
+            DataTable t = new DataTable();
+
+            MySqlDataAdapter x = new MySqlDataAdapter(query, this.Connection);
+            x.Fill(t);
+
+            return t;
         }
 
-        public void CreateRecipe(RecipeModel recipe)
+
+
+        public DataTable GetRecipe(int id)
         {
             MySqlCommand cmd = this.Connection.CreateCommand();
-            cmd.CommandText = $"INSERT INTO recipe (RecipeName, RecipeDescription) VALUES (@Name, @Description);";
-            cmd.Parameters.AddWithValue("@Name", recipe.Name);
-            cmd.Parameters.AddWithValue("@Description", recipe.Description);
-            cmd.ExecuteNonQuery();
+
+            cmd.CommandText = "SELECT * FROM recipe WHERE RecipeID = @id;";
+            cmd.Parameters.AddWithValue("@id", id);
+
+            DataTable t = new DataTable();
+
+            MySqlDataAdapter x = new MySqlDataAdapter(cmd);
+            x.Fill(t);
+
+            return t;
         }
+
+        public DataTable GetAllRecipes()
+        {
+            string query = "SELECT * FROM recipe;";
+
+            DataTable t = new DataTable();
+
+            MySqlDataAdapter x = new MySqlDataAdapter(query, this.Connection);
+            x.Fill(t);
+
+            return t;
+        }
+
 
     }
 
