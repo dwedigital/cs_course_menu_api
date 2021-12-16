@@ -23,10 +23,10 @@ namespace MealPlanner.Models
         // add query methods below      
 
 
-        public DataTable GetIngredient(int id)
+        public DataTable GetIngredient(int ingredientId)
         {
             // returns a single ingredient
-            string query = $"SELECT * FROM ingredients WHERE id = {id}";
+            string query = $"SELECT * FROM ingredients WHERE id = {ingredientId}";
             MySqlCommand cmd = new MySqlCommand(query, Connection);
             MySqlDataAdapter adapter = new MySqlDataAdapter(cmd);
             DataTable t = new DataTable();
@@ -48,13 +48,13 @@ namespace MealPlanner.Models
 
 
 
-        public DataTable GetRecipe(int id)
+        public DataTable GetRecipe(int recipeId)
         {
             // returns a single recipe
             MySqlCommand cmd = this.Connection.CreateCommand();
 
-            cmd.CommandText = "SELECT * FROM recipe WHERE RecipeID = @id;";
-            cmd.Parameters.AddWithValue("@id", id);
+            cmd.CommandText = "SELECT * FROM recipe WHERE RecipeID = @recipeId;";
+            cmd.Parameters.AddWithValue("@recipeId", recipeId);
 
             DataTable t = new DataTable();
 
@@ -77,13 +77,13 @@ namespace MealPlanner.Models
             return t;
         }
 
-        public DataTable GetMeal(int id)
+        public DataTable GetMeal(int mealId)
         {
             // returns a meal with the given id
             MySqlCommand cmd = this.Connection.CreateCommand();
 
-            cmd.CommandText = "SELECT * FROM mealchoice WHERE MealchoiceId = @id;";
-            cmd.Parameters.AddWithValue("@id", id);
+            cmd.CommandText = "SELECT * FROM mealchoice WHERE MealchoiceId = @mealId;";
+            cmd.Parameters.AddWithValue("@mealId", mealId);
 
             DataTable t = new DataTable();
 
@@ -106,7 +106,7 @@ namespace MealPlanner.Models
             return t;
         }
 
-        public DataTable GetUserMealsByDateRange(DateTime start, DateTime end, int UserId)
+        public DataTable GetUserMealsByDateRange(DateTime start, DateTime end, int userId)
         {
             // returns all meals for a user in a given date range
 
@@ -156,9 +156,6 @@ namespace MealPlanner.Models
 
             return ingredients;
         }
-
-
-
 
     }
 
