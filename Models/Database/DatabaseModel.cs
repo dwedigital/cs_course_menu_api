@@ -110,7 +110,7 @@ namespace MealPlanner.Models
         {
             // returns all meals for a user in a given date range
 
-            string query = $"SELECT * FROM mealchoice WHERE Date BETWEEN '{start.ToString("yyyy-MM-dd")}' AND '{end.ToString("yyyy-MM-dd")}' AND UserId = {UserId};";
+            string query = $"SELECT * FROM mealchoice WHERE Date BETWEEN '{start.ToString("yyyy-MM-dd")}' AND '{end.ToString("yyyy-MM-dd")}' AND UserId = {userId};";
             DataTable t = new DataTable();
 
             MySqlDataAdapter x = new MySqlDataAdapter(query, this.Connection);
