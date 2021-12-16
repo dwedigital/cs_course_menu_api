@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "PQxlI0klkxj2mOefV9B9Os6spPJ78GnrcuGOVxVrTpdyRB67ERqQop3vsEipKtYjrd3reLdjUMOQYQSuJ2xUuw==",
+  "dgSpecHash": "5S14n2Jnv9Gav8GTLnkgFuOsmhQLskGAm/184vplIqTwvRkXn5kfXH2mf1gOng/HNPN8bm9hUd44JAu/N8zmgA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\patri\\Desktop\\cs_course_menu_api-Controllers\\MealPlanner.csproj",
+  "projectFilePath": "C:\\Users\\patri\\Desktop\\New folder (2)\\cs_course_menu_api\\MealPlanner.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\patri\\.nuget\\packages\\microsoft.extensions.apidescription.server\\3.0.0\\microsoft.extensions.apidescription.server.3.0.0.nupkg.sha512",
     "C:\\Users\\patri\\.nuget\\packages\\microsoft.openapi\\1.2.3\\microsoft.openapi.1.2.3.nupkg.sha512",

@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\patri\\Desktop\\cs_course_menu_api-Controllers\\MealPlanner.csproj": {}
+    "C:\\Users\\patri\\Desktop\\New folder (2)\\cs_course_menu_api\\MealPlanner.csproj": {}
   },
   "projects": {
-    "C:\\Users\\patri\\Desktop\\cs_course_menu_api-Controllers\\MealPlanner.csproj": {
+    "C:\\Users\\patri\\Desktop\\New folder (2)\\cs_course_menu_api\\MealPlanner.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\patri\\Desktop\\cs_course_menu_api-Controllers\\MealPlanner.csproj",
+        "projectUniqueName": "C:\\Users\\patri\\Desktop\\New folder (2)\\cs_course_menu_api\\MealPlanner.csproj",
         "projectName": "MealPlanner",
-        "projectPath": "C:\\Users\\patri\\Desktop\\cs_course_menu_api-Controllers\\MealPlanner.csproj",
+        "projectPath": "C:\\Users\\patri\\Desktop\\New folder (2)\\cs_course_menu_api\\MealPlanner.csproj",
         "packagesPath": "C:\\Users\\patri\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\patri\\Desktop\\cs_course_menu_api-Controllers\\obj\\",
+        "outputPath": "C:\\Users\\patri\\Desktop\\New folder (2)\\cs_course_menu_api\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\patri\\AppData\\Roaming\\NuGet\\NuGet.Config",

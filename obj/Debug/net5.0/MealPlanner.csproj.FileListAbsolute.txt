@@ -27,3 +27,13 @@ C:\Users\patri\Desktop\cs_course_menu_api-Controllers\obj\Debug\net5.0\MealPlann
 C:\Users\patri\Desktop\cs_course_menu_api-Controllers\obj\Debug\net5.0\ref\MealPlanner.dll
 C:\Users\patri\Desktop\cs_course_menu_api-Controllers\obj\Debug\net5.0\MealPlanner.pdb
 C:\Users\patri\Desktop\cs_course_menu_api-Controllers\obj\Debug\net5.0\MealPlanner.genruntimeconfig.cache
+C:\Users\patri\Desktop\New folder (2)\cs_course_menu_api\obj\Debug\net5.0\MealPlanner.csproj.AssemblyReference.cache
+C:\Users\patri\Desktop\New folder (2)\cs_course_menu_api\obj\Debug\net5.0\MealPlanner.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\patri\Desktop\New folder (2)\cs_course_menu_api\obj\Debug\net5.0\MealPlanner.AssemblyInfoInputs.cache
+C:\Users\patri\Desktop\New folder (2)\cs_course_menu_api\obj\Debug\net5.0\MealPlanner.AssemblyInfo.cs
+C:\Users\patri\Desktop\New folder (2)\cs_course_menu_api\obj\Debug\net5.0\MealPlanner.csproj.CoreCompileInputs.cache
+C:\Users\patri\Desktop\New folder (2)\cs_course_menu_api\obj\Debug\net5.0\MealPlanner.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\patri\Desktop\New folder (2)\cs_course_menu_api\obj\Debug\net5.0\MealPlanner.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\patri\Desktop\New folder (2)\cs_course_menu_api\obj\Debug\net5.0\MealPlanner.dll
+C:\Users\patri\Desktop\New folder (2)\cs_course_menu_api\obj\Debug\net5.0\ref\MealPlanner.dll
+C:\Users\patri\Desktop\New folder (2)\cs_course_menu_api\obj\Debug\net5.0\MealPlanner.pdb

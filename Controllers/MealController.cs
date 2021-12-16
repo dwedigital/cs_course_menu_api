@@ -1,32 +1,100 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Logging;
+using MealPlanner.Models;
+using System.Data;
+
 namespace MealPlanner.Controllers
 {
-    using Microsoft.AspNetCore.Mvc;
+    [ApiController]
     [Route("[controller]/[action]/{id?}")]
-    public class RecipeController : ControllerBase
+    public class MealController : Controller
     {
+        [HttpGet]
         public IActionResult Index()
         {
-            List<ProductModel> recipe = new List<ProductModel>();
-            return View(recipe);
-        }
-        public IActionResult Details()
-        {
-            ProductModel product = ProductModel.GetById(id);
+            List<RecipeModel> recipes = RecipeModel.GetAll();
+            return JSON(recipes);
 
-            return View("Details", product);
         }
-        public IActionResult Edit()
+        [HttpGet]
+        public IActionResult Show(int id)
         {
-            ProductModel product = ProductModel.GetById(productId);
+            RecipeModel recipe = RecipeModel.GetById(id);
+            return recipe;
+        }
 
-            return View(product);
-        }
-        public IActionResult Add()
-        {
-            product.Create();
-            return this.RedirectToAction("Index");
-        }
+        // [HttpPost]
+        // public ProductModel Add([FromBody] ProductModel product)
+        // {
+        //     Console.WriteLine(product.Name);
+        //     // if (ModelState.IsValid)
+        //     // {
+        //     //     product.Save();
+
+        //     //     return RedirectToAction("Index");
+        //     // }
+
+        //     return product;
+        // }
+
+        // [HttpGet]
+        // public IActionResult Index()
+        // {
+        //     List<ProductModel> products = ProductModel.GetAll();
+        //     return View(products);
+        // }
+        // [HttpGet]
+        // public IActionResult Show(int id)
+        // {
+        //     ProductModel product = ProductModel.GetById(id);
+
+        //     return View(product);
+        // }
+        // [HttpGet]
+        // public IActionResult Delete(int id)
+        // {
+        //     ProductModel product = ProductModel.GetById(id);
+
+        //     product.Delete();
+
+        //     return this.RedirectToAction("Index");
+        // }
+        // [HttpGet]
+        // public IActionResult New()
+        // {
+        //     return View(new ProductModel());
+        // }
+        // [HttpPost]
+        // public IActionResult Add(ProductModel product)
+        // {
+        //     if (ModelState.IsValid)
+        //     {
+        //         product.Save();
+
+        //         return RedirectToAction("Index");
+        //     }
+
+        //     return View("New", product);
+        // }
+        // [HttpGet]
+        // public IActionResult Edit(int id)
+        // {
+        //     ProductModel product = ProductModel.GetById(id);
+
+        //     return View(product);
+        // }
+
+        // [HttpPost]
+        // public IActionResult Edit(int id, ProductModel product)
+        // {
+        //     product.Update();
+
+        //     return RedirectToAction("Index", new { id = id });
+        // }
 
     }
-
 }

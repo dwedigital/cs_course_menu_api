@@ -1,32 +1,70 @@
-namespace MealPlanner.Controllers
-{
-    using Microsoft.AspNetCore.Mvc;
-    [Route("[controller]/[action]/{id?}")]
-    public class RecipeController : ControllerBase
-    {
-        public IActionResult Index()
-        {
-            List<ProductModel> recipe = new List<ProductModel>();
-            return View(recipe);
-        }
-        public IActionResult Details()
-        {
-            ProductModel product = ProductModel.GetById(id);
+// using System;
+// using System.Collections.Generic;
+// using System.Linq;
+// using System.Threading.Tasks;
+// using Microsoft.AspNetCore.Mvc;
+// using Microsoft.Extensions.Logging;
+// using MealPlanner.Models;
+// using System.Data;
 
-            return View("Details", product);
-        }
-        public IActionResult Edit()
-        {
-            ProductModel product = ProductModel.GetById(productId);
+// namespace MealPlanner.Controllers
+// {
+//     public class RecipeController : Controller
+//     {
+// [HttpGet]
+// public IActionResult Index()
+// {
+//     List<ProductModel> products = ProductModel.GetAll();
+//     return View(products);
+// }
+// [HttpGet]
+// public IActionResult Show(int id)
+// {
+//     ProductModel product = ProductModel.GetById(id);
 
-            return View(product);
-        }
-        public IActionResult Add()
-        {
-            product.Create();
-            return this.RedirectToAction("Index");
-        }
+//     return View(product);
+// }
+// [HttpGet]
+// public IActionResult Delete(int id)
+// {
+//     ProductModel product = ProductModel.GetById(id);
 
-    }
+//     product.Delete();
 
-}
+//     return this.RedirectToAction("Index");
+// }
+// [HttpGet]
+// public IActionResult New()
+// {
+//     return View(new ProductModel());
+// }
+// [HttpPost]
+// public IActionResult Add(ProductModel product)
+// {
+//     if (ModelState.IsValid)
+//     {
+//         product.Save();
+
+//         return RedirectToAction("Index");
+//     }
+
+//     return View("New", product);
+// }
+// [HttpGet]
+// public IActionResult Edit(int id)
+// {
+//     ProductModel product = ProductModel.GetById(id);
+
+//     return View(product);
+// }
+
+// [HttpPost]
+// public IActionResult Edit(int id, ProductModel product)
+// {
+//     product.Update();
+
+//     return RedirectToAction("Index", new { id = id });
+// }
+
+//     }
+// }
